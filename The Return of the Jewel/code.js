@@ -1,5 +1,4 @@
 
-
 var p5Inst = new p5(null, 'sketch');
 
 window.preload = function () {
@@ -7,7 +6,7 @@ window.preload = function () {
 
   p5Inst._predefinedSpriteAnimations = {};
   p5Inst._pauseSpriteAnimationsByDefault = false;
-  var animationListJSON = {"orderedKeys":["ee2f21b4-351d-4e88-b555-a7e5222fc5eb","5d048187-3608-460b-874d-07f12b4071e5"],"propsByKey":{"ee2f21b4-351d-4e88-b555-a7e5222fc5eb":{"name":"diamond","sourceUrl":"assets/api/v1/animation-library/gamelab/1ve8xcSUavvVvLC6Vl.mojAV9PqyYTDU/category_stickers/sticker_14.png","frameSize":{"x":246,"y":192},"frameCount":1,"looping":true,"frameDelay":2,"version":"1ve8xcSUavvVvLC6Vl.mojAV9PqyYTDU","categories":["stickers"],"loadedFromSource":true,"saved":true,"sourceSize":{"x":246,"y":192},"rootRelativePath":"assets/api/v1/animation-library/gamelab/1ve8xcSUavvVvLC6Vl.mojAV9PqyYTDU/category_stickers/sticker_14.png"},"5d048187-3608-460b-874d-07f12b4071e5":{"name":"theif","sourceUrl":"assets/api/v1/animation-library/gamelab/8AmDG487lonn5isbI5elQ3ee8xDHqDsZ/category_fantasy/rpgcharacter_11.png","frameSize":{"x":252,"y":332},"frameCount":1,"looping":true,"frameDelay":2,"version":"8AmDG487lonn5isbI5elQ3ee8xDHqDsZ","categories":["fantasy"],"loadedFromSource":true,"saved":true,"sourceSize":{"x":252,"y":332},"rootRelativePath":"assets/api/v1/animation-library/gamelab/8AmDG487lonn5isbI5elQ3ee8xDHqDsZ/category_fantasy/rpgcharacter_11.png"}}};
+  var animationListJSON = {"orderedKeys":["ee2f21b4-351d-4e88-b555-a7e5222fc5eb","5d048187-3608-460b-874d-07f12b4071e5"],"propsByKey":{"ee2f21b4-351d-4e88-b555-a7e5222fc5eb":{"name":"diamond","sourceUrl":"sticker_14.png","frameSize":{"x":246,"y":192},"frameCount":1,"looping":true,"frameDelay":2,"version":"1ve8xcSUavvVvLC6Vl.mojAV9PqyYTDU","categories":["stickers"],"loadedFromSource":true,"saved":true,"sourceSize":{"x":246,"y":192},"rootRelativePath":"sticker_14.png"},"5d048187-3608-460b-874d-07f12b4071e5":{"name":"theif","sourceUrl":"rpgcharacter_11.png","frameSize":{"x":252,"y":332},"frameCount":1,"looping":true,"frameDelay":2,"version":"8AmDG487lonn5isbI5elQ3ee8xDHqDsZ","categories":["fantasy"],"loadedFromSource":true,"saved":true,"sourceSize":{"x":252,"y":332},"rootRelativePath":"rpgcharacter_11.png"}}};
   var orderedKeys = animationListJSON.orderedKeys;
   var allAnimationsSingleFrame = false;
   orderedKeys.forEach(function (key) {
