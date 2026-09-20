@@ -1,5 +1,3 @@
-
-
 var p5Inst = new p5(null, 'sketch');
 
 window.preload = function () {
@@ -36,6 +34,15 @@ window.preload = function () {
     }
 // -----
 
+// safe wrapper so a sound error never blocks sprites from drawing
+function safePlaySound(path) {
+  try {
+    playSound(path);
+  } catch (e) {
+    console.warn("Sound failed to play:", path, e);
+  }
+}
+
  //create the ball, playerPaddle and computerPaddle as sprite objects
 var ball = createSprite(200,200,10,10);
 ball.setAnimation("ball");
@@ -58,7 +65,7 @@ function draw() {
   background("white");
   
   if(ball.isTouching(computerPaddle) || ball.isTouching(playerPaddle)) {
-   playSound("assets/hit.mp3");
+   safePlaySound("assets/hit.mp3");
   }
   
   //place info text in the center
@@ -92,7 +99,7 @@ function draw() {
   ball.bounceOff(computerPaddle);
  
   if(ball.isTouching(topEdge) || ball.isTouching(bottomEdge)) {
-   playSound("assets/wall_hit.mp3");
+   safePlaySound("assets/wall_hit.mp3");
   }
   
   //serve the ball when space is pressed
@@ -105,20 +112,20 @@ function draw() {
  
   //reset the ball to the centre if it crosses the screen
   if(ball.x > 400 || ball.x <0) {
-    playSound("assets/hit.mp3");
+    safePlaySound("assets/hit.mp3");
     
     
     if(ball.x > 400) {
       compScore = compScore + 1;
       playerPaddle.setAnimation("player_fall")
-    playSound("assets/score.mp3");
+    safePlaySound("assets/score.mp3");
         
     }
     
     if(ball.x < 0) {
       playerScore = playerScore + 1;
       playerPaddle.setAnimation("player")
-       playSound("assets/score.mp3");
+       safePlaySound("assets/score.mp3");
     }
     
     reset();
