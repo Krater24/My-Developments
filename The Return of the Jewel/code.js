@@ -38,7 +38,13 @@ window.preload = function () {
  var theif = createSprite(10, 390, 15, 15);
  var laser1 = createSprite(105, 200, 200, 5);
  var laser2 = createSprite(300, 200, 200, 5);
- 
+
+ //the diamond sitting in the top right corner - reach it to win
+ var diamond = createSprite(370, 30, 20, 20);
+ diamond.setAnimation("diamond");
+
+ //tracks whether the player has already won
+ var hasWon = false;
 
 
 
@@ -63,6 +69,12 @@ function draw() {
   background("yellow");
   
  shape(390, 0, 380, 10, 390, 20, 400, 10);
+
+  if (hasWon) {
+    text("You Won!", 160, 200);
+    drawSprites();
+    return;
+  }
   
   if(keyWentDown("RIGHT_ARROW")){
   theif.velocityX = 2;
@@ -86,6 +98,15 @@ if(keyWentDown("DOWN_ARROW")){
   laser1.velocityY = 0;
   laser2.velocityY = 0;
    }
+
+  //win condition - reaching the diamond
+  if(theif.isTouching(diamond)){
+    hasWon = true;
+    theif.velocityX = 0;
+    theif.velocityY = 0;
+    laser1.velocityY = 0;
+    laser2.velocityY = 0;
+  }
   
  createEdgeSprites();
   
