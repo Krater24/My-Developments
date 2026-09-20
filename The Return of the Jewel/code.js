@@ -42,6 +42,7 @@ window.preload = function () {
  //the diamond sitting in the top right corner - reach it to win
  var diamond = createSprite(370, 30, 20, 20);
  diamond.setAnimation("diamond");
+ diamond.scale = 0.1;
 
  //tracks whether the player has already won
  var hasWon = false;
@@ -99,8 +100,8 @@ if(keyWentDown("DOWN_ARROW")){
   laser2.velocityY = 0;
    }
 
-  //win condition - reaching the diamond
-  if(theif.isTouching(diamond)){
+  //win condition - reaching the diamond (distance check, not isTouching)
+  if(dist(theif.x, theif.y, diamond.x, diamond.y) < 30){
     hasWon = true;
     theif.velocityX = 0;
     theif.velocityY = 0;
