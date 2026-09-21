@@ -41,7 +41,7 @@ window.preload = function () {
 
  //the diamond sitting in the top right corner - reach it to win
  //(kept clear of the decorative shape drawn near x:380-400, y:0-20)
- var diamond = createSprite(340, 60, 20, 20);
+ var diamond = createSprite(360, 45, 20, 20);
  diamond.setAnimation("diamond");
  diamond.scale = 0.1;
 
@@ -102,7 +102,7 @@ if(keyWentDown("DOWN_ARROW")){
    }
 
   //win condition - reaching the diamond (distance check, not isTouching)
-  if(dist(theif.x, theif.y, diamond.x, diamond.y) < 15){
+  if(dist(theif.x, theif.y, diamond.x, diamond.y) < 10){
     hasWon = true;
     theif.velocityX = 0;
     theif.velocityY = 0;
