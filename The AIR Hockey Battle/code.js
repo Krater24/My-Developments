@@ -13,10 +13,14 @@ window.preload = function () {
     var props = animationListJSON.propsByKey[key];
     var frameCount = allAnimationsSingleFrame ? 1 : props.frameCount;
     var image = loadImage(props.rootRelativePath, function () {
+      //shrink the source image itself so the sprite is genuinely small,
+      //not just given a smaller collider on top of a huge image
+      var targetSize = 20;
+      image.resize(targetSize, targetSize);
       var spriteSheet = loadSpriteSheet(
           image,
-          props.frameSize.x,
-          props.frameSize.y,
+          targetSize,
+          targetSize,
           frameCount
       );
       p5Inst._predefinedSpriteAnimations[props.name] = loadAnimation(spriteSheet);
@@ -47,8 +51,6 @@ var player = createSprite(200, 350, 70, 10);
 var football = createSprite(200, 200, 20, 20);
 
 football.setAnimation("soccer_bw_1");
-football.width = 20;
-football.height = 20;
 
 football.velocityX = 3;
 football.velocityY = 3;
