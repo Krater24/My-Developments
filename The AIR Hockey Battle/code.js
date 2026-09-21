@@ -80,9 +80,12 @@ background("green");
    drawSprites(); 
 
    if (gameOver) {
-     text("Game Over", 160, 200);
-     return;
-   }
+  textSize(40);
+  fill("blue");
+  textAlign(CENTER, CENTER);
+  text("Game Over", 200, 200);
+  return;
+}
 
    player.x = World.mouseX;
    computer.x = football.x
