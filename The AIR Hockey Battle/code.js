@@ -15,7 +15,7 @@ window.preload = function () {
     var image = loadImage(props.rootRelativePath, function () {
       //shrink the source image itself so the sprite is genuinely small,
       //not just given a smaller collider on top of a huge image
-      var targetSize = 20;
+      var targetSize = 30;
       image.resize(targetSize, targetSize);
       var spriteSheet = loadSpriteSheet(
           image,
@@ -95,10 +95,6 @@ computer.bounce(sideline1);
 computer.bounce(sideline2);
 player.bounce(sideline1);
 player.bounce(sideline2);
-
-   //temporary debug readout - remove once game-over is confirmed working
-   fill(255);
-   text("Ball Y: " + Math.round(football.y), 20, 280);
 
    //ball goes out - passes the goal line at either end of the field
    if (football.y < 10 || football.y > 390) {
