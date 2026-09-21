@@ -47,7 +47,8 @@ var player = createSprite(200, 350, 70, 10);
 var football = createSprite(200, 200, 20, 20);
 
 football.setAnimation("soccer_bw_1");
-football.scale = 0.1;
+football.width = 20;
+football.height = 20;
 
 football.velocityX = 3;
 football.velocityY = 3;
