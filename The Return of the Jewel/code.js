@@ -39,9 +39,8 @@ window.preload = function () {
  var laser1 = createSprite(105, 200, 200, 5);
  var laser2 = createSprite(300, 200, 200, 5);
 
- //the diamond sitting in the top right corner - reach it to win
- //(kept clear of the decorative shape drawn near x:380-400, y:0-20)
- var diamond = createSprite(360, 45, 20, 20);
+ //the diamond sitting right on top of the decorative shape in the corner
+ var diamond = createSprite(390, 10, 20, 20);
  diamond.setAnimation("diamond");
  diamond.scale = 0.1;
 
@@ -69,6 +68,8 @@ laser2.shapeColor = "red";
 function draw() {
   
   background("yellow");
+  
+ shape(390, 0, 380, 10, 390, 20, 400, 10);
 
   if (hasWon) {
     text("You Won!", 160, 200);
