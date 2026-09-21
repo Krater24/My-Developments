@@ -69,8 +69,6 @@ laser2.shapeColor = "red";
 function draw() {
   
   background("yellow");
-  
- shape(390, 0, 380, 10, 390, 20, 400, 10);
 
   if (hasWon) {
     text("You Won!", 160, 200);
