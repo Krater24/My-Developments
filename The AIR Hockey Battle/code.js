@@ -94,8 +94,12 @@ computer.bounce(sideline2);
 player.bounce(sideline1);
 player.bounce(sideline2);
 
+   //temporary debug readout - remove once game-over is confirmed working
+   fill(255);
+   text("Ball Y: " + Math.round(football.y), 20, 280);
+
    //ball goes out - passes the goal line at either end of the field
-   if (football.y < 20 || football.y > 380) {
+   if (football.y < 10 || football.y > 390) {
      gameOver = true;
      football.velocityX = 0;
      football.velocityY = 0;
