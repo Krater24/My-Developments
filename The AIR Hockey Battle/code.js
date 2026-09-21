@@ -81,7 +81,7 @@ background("green");
 
    if (gameOver) {
   textSize(40);
-  fill("white");
+  fill("black");
   textAlign(CENTER, CENTER);
   text("Game Over", 200, 200);
   return;
