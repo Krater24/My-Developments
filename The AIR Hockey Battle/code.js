@@ -53,6 +53,9 @@ football.height = 20;
 football.velocityX = 3;
 football.velocityY = 3;
 
+//tracks whether the ball has gone out (into a goal)
+var gameOver = false;
+
 
 
 
@@ -73,6 +76,12 @@ player.shapeColor = "blue"
 function draw() {
 background("green");
    drawSprites(); 
+
+   if (gameOver) {
+     text("Game Over", 160, 200);
+     return;
+   }
+
    player.x = World.mouseX;
    computer.x = football.x
    football.bounceOff(computer);
@@ -85,7 +94,13 @@ computer.bounce(sideline2);
 player.bounce(sideline1);
 player.bounce(sideline2);
 
-   
+   //ball goes out - passes the goal line at either end of the field
+   if (football.y < 20 || football.y > 380) {
+     gameOver = true;
+     football.velocityX = 0;
+     football.velocityY = 0;
+   }
+
 }
 
 // -----
