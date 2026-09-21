@@ -1,5 +1,4 @@
 
-
 var p5Inst = new p5(null, 'sketch');
 
 window.preload = function () {
@@ -48,7 +47,7 @@ var player = createSprite(200, 350, 70, 10);
 var football = createSprite(200, 200, 20, 20);
 
 football.setAnimation("soccer_bw_1");
-football.scale = "0.1"
+football.scale = 0.1;
 
 football.velocityX = 3;
 football.velocityY = 3;
