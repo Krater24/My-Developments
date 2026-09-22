@@ -74,7 +74,7 @@ function draw() {
  //subtle hint, doesn't give away the actual win condition
  textSize(10);
  fill(120);
- text("This thief slips past every edge.", 10, 555);
+ text("This thief slips past every edge.", 10, 15);
  fill(0);
  textSize(12);
 
