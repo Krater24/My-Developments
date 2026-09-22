@@ -71,6 +71,13 @@ function draw() {
   
  shape(390, 0, 380, 10, 390, 20, 400, 10);
 
+ //subtle hint, doesn't give away the actual win condition
+ textSize(10);
+ fill(120);
+ text("This thief slips past every edge.", 10, 555);
+ fill(0);
+ textSize(12);
+
   if (hasWon) {
     text("You Won!", 160, 200);
     drawSprites();
